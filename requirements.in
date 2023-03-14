@@ -1,0 +1,5 @@
+polars
+rich
+slack-bolt==1.16.4
+structlog
+xlsx2csv
