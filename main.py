@@ -109,8 +109,11 @@ def main():
                 )
                 pending_users.append(user["id"])
 
-    logger.info("Sending invites", pending_users=pending_users)
-    client.conversations_invite(channel=channel_id, users=",".join(pending_users))
+    if pending_users:
+        logger.info("Sending invites", pending_users=pending_users)
+        client.conversations_invite(channel=channel_id, users=",".join(pending_users))
+    else:
+        logger.warning("No invites to send")
 
 
 if __name__ == "__main__":
