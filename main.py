@@ -82,7 +82,7 @@ def main():
     client = WebClient(token=os.environ["SLACK_BOT_TOKEN"])
     channel_id = os.environ["CHANNEL_ID"]
 
-    user_ids_already_in_channel = user_ids_in_channel(channel_id, client=client)
+    user_ids_already_in_channel = list(user_ids_in_channel(channel_id, client=client))
 
     pending_users = []
     for participant in registered_participants:
